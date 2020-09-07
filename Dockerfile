@@ -13,7 +13,9 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh && 
 
 ENV PATH /opt/anaconda3/bin:$PATH
 
-RUN pip install --upgrade pip xgboost mojimoji
+RUN pip install --default-timeout=1000 --upgrade pip xgboost mojimoji beautifulsoup4 janome
+
+RUN pip3 install --default-timeout=1000 tensorflow keras
 
 WORKDIR /
 
